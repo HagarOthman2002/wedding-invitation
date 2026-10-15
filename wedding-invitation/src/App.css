@@ -1,0 +1,523 @@
+.app {
+  --cream: #faf6f0;
+  --paper: #fffdf9;
+  --gold: #a98153;
+  --gold-light: #d7b993;
+  --brown: #55483e;
+  --muted: #918174;
+
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--brown);
+}
+
+.topbar {
+  height: 74px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper);
+  border-bottom: 1px solid #eee4d7;
+}
+
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  color: var(--gold);
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #e7d8c5;
+  border-radius: 30px;
+  padding: 10px 13px;
+  color: var(--brown);
+  background: transparent;
+}
+
+.icon-button:hover {
+  background: #f3e9dc;
+}
+
+.cover {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at top, #fffdf9, transparent 70%),
+    #f0e3d4;
+  animation: fadeIn 0.7s ease both;
+}
+
+.cover-card {
+  position: relative;
+  width: min(100%, 460px);
+  min-height: 520px;
+  padding: 65px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--paper);
+  border: 1px solid var(--gold-light);
+  outline: 1px solid #c9a77d;
+  outline-offset: -12px;
+  box-shadow: 0 20px 70px #70543b19;
+  animation: riseIn 1s ease both;
+}
+
+.cover-heart,
+.hero-heart,
+.venue-section > svg,
+.footer > svg,
+.wish-card > svg {
+  color: var(--gold);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cover h1,
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 7vw, 65px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 22px 0;
+}
+
+.cover h1 span,
+.hero h1 span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.cover-date {
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+
+.cover-line {
+  width: 70px;
+  height: 1px;
+  background: var(--gold-light);
+  margin: 25px 0;
+}
+
+.cover-decoration {
+  position: absolute;
+  font-size: 100px;
+  color: #b9946b;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.decoration-one {
+  top: 5%;
+  left: 5%;
+}
+
+.decoration-two {
+  right: 5%;
+  bottom: 5%;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 13px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  color: white;
+  background: var(--gold);
+  font-size: 13px;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.primary-button:hover {
+  background: #8d6a45;
+  transform: translateY(-2px);
+}
+
+.invitation {
+  transition: opacity 0.8s ease;
+}
+
+.invitation.hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.invitation.visible {
+  visibility: visible;
+  opacity: 1;
+  animation: fadeIn 0.9s ease both;
+}
+
+.hero {
+  min-height: 650px;
+  padding: 100px 24px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    linear-gradient(#fffdf7a8, #faf6f0dc),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85')
+      center 45% / cover;
+}
+
+.hero-content {
+  max-width: 750px;
+  padding: 50px 20px;
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.event-date {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.hero-heart {
+  margin: 28px auto;
+}
+
+.scroll-link {
+  display: inline-flex;
+  margin-top: 35px;
+  color: var(--gold);
+  animation: float 2s ease-in-out infinite;
+}
+
+.section {
+  padding: 95px 7%;
+  text-align: center;
+}
+
+.section h2,
+.venue-section h2,
+.footer h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 43px);
+  margin: 12px 0 35px;
+}
+
+.countdown-section {
+  background: var(--paper);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.countdown-box {
+  min-width: 100px;
+  padding: 24px 15px;
+  border: 1px solid #e8d8c5;
+  background: var(--cream);
+}
+
+.countdown-box strong {
+  display: block;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.countdown-box span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.gallery-section {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.photo-button {
+  padding: 0;
+  height: 370px;
+  overflow: hidden;
+  border: 1px solid #e5d6c5;
+  background: white;
+}
+
+.photo-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.photo-button:hover img {
+  transform: scale(1.06);
+}
+
+.venue-section {
+  background: #eee2d3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.venue-address {
+  margin: -10px 0 30px;
+  color: var(--muted);
+}
+
+.guestbook-section {
+  background: var(--paper);
+}
+
+.guestbook-form {
+  width: min(100%, 540px);
+  margin: 0 auto 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e5d6c5;
+  border-radius: 2px;
+  background: var(--cream);
+  color: var(--brown);
+  outline-color: var(--gold);
+}
+
+.guestbook-form textarea {
+  resize: vertical;
+}
+
+.guestbook-form .primary-button {
+  align-self: center;
+}
+
+.wishes-list {
+  width: min(100%, 700px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  text-align: start;
+}
+
+.wish-card {
+  padding: 22px;
+  border: 1px solid #e8d8c5;
+  background: var(--cream);
+  overflow-wrap: anywhere;
+}
+
+.wish-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.wish-card p {
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.footer {
+  padding: 55px 20px;
+  text-align: center;
+  background: #eee2d3;
+}
+
+.footer h2 {
+  margin: 12px 0;
+}
+
+.footer p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  padding: 60px 20px;
+  display: grid;
+  place-items: center;
+  background: #241c17ed;
+  animation: fadeIn 0.25s ease both;
+}
+
+.lightbox img {
+  max-height: 85vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  color: white;
+  background: transparent;
+  border: 0;
+}
+
+.arabic {
+  font-family: 'Amiri', serif;
+}
+
+.arabic .eyebrow {
+  letter-spacing: 0;
+  font-size: 15px;
+}
+
+.arabic .cover h1,
+.arabic .hero h1,
+.arabic .section h2,
+.arabic .venue-section h2,
+.arabic .footer h2,
+.arabic .wish-card h3 {
+  font-family: 'Amiri', serif;
+}
+
+.arabic .cover h1,
+.arabic .hero h1 {
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    height: 65px;
+    padding: 0 5%;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .top-actions {
+    gap: 6px;
+  }
+
+  .icon-button {
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  .cover-card {
+    min-height: 470px;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 65px 15px;
+  }
+
+  .section {
+    padding: 70px 6%;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .countdown-box {
+    min-width: 70px;
+    padding: 16px 9px;
+  }
+
+  .countdown-box strong {
+    font-size: 28px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .photo-button {
+    height: 330px;
+  }
+
+  .wishes-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
